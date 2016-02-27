@@ -7,6 +7,7 @@ def autograder(url):
     parsed results in the correct format. See project sheet for
     details on correct format.'''
     # your code here
+    
     results = {}
     results['url'] = url
     results['ingredients'] = []
