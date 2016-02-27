@@ -16,16 +16,17 @@ def autograder(url):
     quantity_reg = re.compile(r'[\d/]+ (?:teaspoon|tablespoon|cup)?s?')
     for ingregient_expression in ingredients:
     	ingredient_dict = {}
-    	print ingregient_expression
+    	#print ingregient_expression
     	quantity = re.findall(quantity_reg, ingregient_expression.contents[0])
-    	if len(quantity) > 1:
+        print quantity
+    	if len(quantity) > 0:
     		ingredient = ingregient_expression.contents[0].replace(quantity[0], "")
     		ingredient_dict['quantity'] = quantity[0]
     	else:
     		ingredient = ingregient_expression.contents[0]
     		ingredient_dict['quantity'] = 1
     	ingredient_dict['ingredient'] = ingredient
-    	print ingredient_dict
+    	#print ingredient_dict
     	results['ingredients'].append(ingredient_dict)
 
     return results
