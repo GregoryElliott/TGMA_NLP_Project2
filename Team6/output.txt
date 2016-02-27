@@ -1,0 +1,15 @@
+<span class="recipe-ingred_txt added" data-id="16157" data-nameid="16157" itemprop="ingredients">1/2 cup butter</span>
+{'ingredient': u'1/2 cup butter', 'quantity': 1}
+<span class="recipe-ingred_txt added" data-id="4342" data-nameid="4342" itemprop="ingredients">3 tablespoons minced garlic</span>
+{'ingredient': u'3 tablespoons minced garlic', 'quantity': 1}
+<span class="recipe-ingred_txt added" data-id="2882" data-nameid="2882" itemprop="ingredients">3 tablespoons soy sauce</span>
+{'ingredient': u'3 tablespoons soy sauce', 'quantity': 1}
+<span class="recipe-ingred_txt added" data-id="16406" data-nameid="16406" itemprop="ingredients">1/4 teaspoon black pepper</span>
+{'ingredient': u'1/4 teaspoon black pepper', 'quantity': 1}
+<span class="recipe-ingred_txt added" data-id="16405" data-nameid="16405" itemprop="ingredients">1 tablespoon dried parsley</span>
+{'ingredient': u'1 tablespoon dried parsley', 'quantity': 1}
+<span class="recipe-ingred_txt added" data-id="6522" data-nameid="6522" itemprop="ingredients">6 boneless chicken thighs, with skin</span>
+{'ingredient': u'6 boneless chicken thighs, with skin', 'quantity': 1}
+<span class="recipe-ingred_txt added" data-id="16405" data-nameid="16405" itemprop="ingredients">dried parsley, to taste</span>
+{'ingredient': u'dried parsley, to taste', 'quantity': 1}
+{'url': 'http://allrecipes.com/recipe/80827/easy-garlic-broiled-chicken/', 'ingredients': [{'ingredient': u'1/2 cup butter', 'quantity': 1}, {'ingredient': u'3 tablespoons minced garlic', 'quantity': 1}, {'ingredient': u'3 tablespoons soy sauce', 'quantity': 1}, {'ingredient': u'1/4 teaspoon black pepper', 'quantity': 1}, {'ingredient': u'1 tablespoon dried parsley', 'quantity': 1}, {'ingredient': u'6 boneless chicken thighs, with skin', 'quantity': 1}, {'ingredient': u'dried parsley, to taste', 'quantity': 1}]}
