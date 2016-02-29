@@ -27,8 +27,8 @@ def autograder(url):
     	if len(quantity) > 0:
             ingredient = ingredient_expression.contents[0]
             if number[0] in quantity[0] and '/' in number[0]:
-                formatted_quantity = quantity[0].replace(number[0], "%.2f" % eval(compile(number[0], '<string>', 'eval', __future__.division.compiler_flag)))
-                ingredient = ingredient.replace(number[0], "%.2f" % eval(compile(number[0], '<string>', 'eval', __future__.division.compiler_flag)))
+                formatted_quantity = quantity[0].replace(number[0], str(float("%.2f" % eval(compile(number[0], '<string>', 'eval', __future__.division.compiler_flag)))))
+                ingredient = ingredient.replace(number[0], str(float("%.2f" % eval(compile(number[0], '<string>', 'eval', __future__.division.compiler_flag)))))
             else:
                 formatted_quantity = quantity[0]
     		ingredient_dict['quantity'] = formatted_quantity
