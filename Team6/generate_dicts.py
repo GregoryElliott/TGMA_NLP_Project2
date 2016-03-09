@@ -47,6 +47,10 @@ def generate_dicts():
     dump(create_list('[temperatures]','[duration]'), 'temperatures')
     dump(create_list('[duration]','[health]'), 'duration')
     dump(create_list('[health]','[health-fat]'), 'health')
+    dump(create_list('[descriptor]','[preparation]'), 'descriptor')
+    dump(create_list('[preparation]','[prep-description]'), 'preparation')
+    dump(create_list('[prep-description]','[End]'), 'prep-description')
+
         
 
     
