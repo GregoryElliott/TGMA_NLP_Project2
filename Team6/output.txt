@@ -1,15 +1,139 @@
-<span class="recipe-ingred_txt added" data-id="16157" data-nameid="16157" itemprop="ingredients">1/2 cup butter</span>
-{'ingredient': u'1/2 cup butter', 'quantity': 1}
-<span class="recipe-ingred_txt added" data-id="4342" data-nameid="4342" itemprop="ingredients">3 tablespoons minced garlic</span>
-{'ingredient': u'3 tablespoons minced garlic', 'quantity': 1}
-<span class="recipe-ingred_txt added" data-id="2882" data-nameid="2882" itemprop="ingredients">3 tablespoons soy sauce</span>
-{'ingredient': u'3 tablespoons soy sauce', 'quantity': 1}
-<span class="recipe-ingred_txt added" data-id="16406" data-nameid="16406" itemprop="ingredients">1/4 teaspoon black pepper</span>
-{'ingredient': u'1/4 teaspoon black pepper', 'quantity': 1}
-<span class="recipe-ingred_txt added" data-id="16405" data-nameid="16405" itemprop="ingredients">1 tablespoon dried parsley</span>
-{'ingredient': u'1 tablespoon dried parsley', 'quantity': 1}
-<span class="recipe-ingred_txt added" data-id="6522" data-nameid="6522" itemprop="ingredients">6 boneless chicken thighs, with skin</span>
-{'ingredient': u'6 boneless chicken thighs, with skin', 'quantity': 1}
-<span class="recipe-ingred_txt added" data-id="16405" data-nameid="16405" itemprop="ingredients">dried parsley, to taste</span>
-{'ingredient': u'dried parsley, to taste', 'quantity': 1}
-{'url': 'http://allrecipes.com/recipe/80827/easy-garlic-broiled-chicken/', 'ingredients': [{'ingredient': u'1/2 cup butter', 'quantity': 1}, {'ingredient': u'3 tablespoons minced garlic', 'quantity': 1}, {'ingredient': u'3 tablespoons soy sauce', 'quantity': 1}, {'ingredient': u'1/4 teaspoon black pepper', 'quantity': 1}, {'ingredient': u'1 tablespoon dried parsley', 'quantity': 1}, {'ingredient': u'6 boneless chicken thighs, with skin', 'quantity': 1}, {'ingredient': u'dried parsley, to taste', 'quantity': 1}]}
+dish, baking dish, 1, 1, 0.500000
+dish, loaf pan, 0, 3, 0.000000
+baking pan, baking dish, 1, 2, 0.333333
+baking pan, loaf pan, 1, 2, 0.333333
+skillet, baking dish, 0, 3, 0.000000
+skillet, loaf pan, 0, 3, 0.000000
+pan, baking dish, 0, 3, 0.000000
+pan, loaf pan, 1, 1, 0.500000
+brining, form, 0, 2, 0.000000
+brining, season, 0, 2, 0.000000
+brining, preheat, 0, 2, 0.000000
+brining, mix, 0, 2, 0.000000
+brining, combine, 0, 2, 0.000000
+brining, place, 0, 2, 0.000000
+seasoning, form, 0, 2, 0.000000
+seasoning, season, 0, 2, 0.000000
+seasoning, preheat, 0, 2, 0.000000
+seasoning, mix, 0, 2, 0.000000
+seasoning, combine, 0, 2, 0.000000
+seasoning, place, 0, 2, 0.000000
+meatloaf, form, 0, 2, 0.000000
+meatloaf, season, 0, 2, 0.000000
+meatloaf, preheat, 0, 2, 0.000000
+meatloaf, mix, 0, 2, 0.000000
+meatloaf, combine, 0, 2, 0.000000
+meatloaf, place, 0, 2, 0.000000
+baking, form, 0, 2, 0.000000
+baking, season, 0, 2, 0.000000
+baking, preheat, 0, 2, 0.000000
+baking, mix, 0, 2, 0.000000
+baking, combine, 0, 2, 0.000000
+baking, place, 0, 2, 0.000000
+breading, form, 0, 2, 0.000000
+breading, season, 0, 2, 0.000000
+breading, preheat, 0, 2, 0.000000
+breading, mix, 0, 2, 0.000000
+breading, combine, 0, 2, 0.000000
+breading, place, 0, 2, 0.000000
+beef
+[u'beef', u'ground beef']
+pounds
+[u'pounds']
+1.5
+[1.5]
+['ground']
+[u'ground']
+['ground']
+[u'ground']
+---
+egg
+[u'egg']
+unit
+[u'unit', u'units', u'discrete']
+1
+[1]
+[]
+[]
+[]
+[]
+---
+onion
+[u'onion']
+unit
+[u'unit', u'units', u'discrete']
+1
+[1]
+[]
+[]
+[u'chopped']
+[u'chopped']
+---
+milk
+[u'milk']
+cup
+[u'cup']
+1
+[1]
+[]
+[]
+[]
+[]
+---
+bread crumbs
+[u'bread crumbs']
+cup
+[u'cup']
+1
+[1]
+['dried']
+[u'dried']
+['dried']
+[u'dried']
+---
+salt and pepper
+[u'salt and pepper', u'salt', u'pepper']
+to taste
+[u'to taste']
+1
+[0, 1, u'none']
+[]
+[]
+[]
+[]
+---
+brown sugar
+[u'brown sugar']
+tablespoons
+[u'tablespoon', u'tablespoons']
+2
+[2]
+[]
+[]
+[]
+[]
+---
+mustard
+[u'mustard']
+tablespoons
+[u'tablespoon', u'tablespoons']
+2
+[2]
+['prepared']
+[u'prepared']
+['prepared']
+[u'prepared']
+---
+ketchup
+[u'ketchup']
+cup
+[u'cup']
+0.33
+[0.333]
+[]
+[]
+[]
+[]
+---
+Recipe	Ingredients	Primary Method	Methods	Tools
+Recipe 4:		0.767	1	0.000	0.750
