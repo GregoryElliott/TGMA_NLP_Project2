@@ -5,8 +5,7 @@
 # pip install py-bing-search
 #------------------------------------------------------------------------------
 # TODO:
-# Safety check modifiers
-# Update unsalted/sodium stripped
+# Exceptions: butter(lowfat)
 # https://en.wikipedia.org/wiki/Glycemic_index
 # http://www.nhlbi.nih.gov/health/educational/lose_wt/eat/shop_lcal_fat.htm
 # http://greatist.com/health/83-healthy-recipe-substitutions
@@ -20,6 +19,7 @@ import os.path
 from recipe_api import autograder
 tR =  autograder("http://allrecipes.com/Recipe/Easy-Garlic-Broiled-Chicken/")
 SaltedIngredients = {'ingredients': [{'measurement': u'cup', 'name': u'unsalted butter', 'quantity': 0.5}, {'measurement': u'tablespoon', 'name': u'unsalted minced garlic', 'quantity': 3}, {'measurement': u'tablespoon', 'name': u'oy sauce', 'quantity': 3}, {'measurement': u'teaspoon', 'name': u'unsalted black pepper', 'quantity': 0.25}, {'measurement': u'tablespoon', 'name': u'low sodium dried parsley', 'quantity': 1}, {'preparation': u'with skin', 'descriptor': u'with skin', 'measurement': 'unit', 'name': u'boneless chicken thighs', 'quantity': 6}, {'preparation': u'to taste', 'descriptor': u'to taste', 'measurement': 'unit', 'name': u'low sodium dried parsley', 'quantity': 1}], 'url': 'http://allrecipes.com/Recipe/Easy-Garlic-Broiled-Chicken/', 'cooking methods': ['lightly', '', 'melted'], 'primary cooking method': ['broil'], 'max': {'cooking tools': 7, 'cooking methods': 3, 'primary cooking method': 1}, 'cooking tools': ['knife', 'oven', 'broiler', 'baking pan', 'microwave', 'microwave safe bowl', 'baster']}
+# ERROR: http://allrecipes.com/recipe/172854/spaghetti-squash-saute/
 ## -- End Temp (Testing) 
 
 ## -- Parameters --
@@ -33,34 +33,68 @@ def t_low_sodium (recipe, is_to):
     '-> _Recipe_ Transforms a recipe to a low sodium variat'
     return transform(recipe,
                      't_sodium',
-                     ['unsalted', 'low sodium'],
+                     ['low sodium', 'unsalted', 'low-sodium', 'sodium-free'],
+                     {'marinade': 'cirtus juice',
+                      'baking soda': 'eggs'},
+                     ['salt', 'salted'],
                      is_to)
 
 def t_low_fat (recipe, is_to):
     '-> _Recipe_ Transforms a recipe to a low fat variant'
     return transform(recipe,
                      't_lowfat',
-                     ['lowfat, skim, reduced fat'],
+                     ['skim', 'lowfat', 'reduced fat'],
+                     {'ice cream' : 'sorbet', 
+                      'cream' : 'milk',
+                      'cocoa' : 'cacao',
+                      'chocolate' : 'cacao',
+                      'bacon' :  'prosciutto',
+                      'egg' : 'egg white',
+                      'eggs' : 'egg whites',
+                      'bison' : 'beef',
+                      'sour cream' : 'cottage cheese',
+                      'ramen noodles' : 'rice noodles',
+                      'granola': 'bran flakes',
+                      'alfredo': 'marinara',
+                      'donut' : 'english muffin',
+                      'guacamole' : 'salsa',
+                      'refried beans' : 'salsa'
+                     },
+                     [],
                      is_to)
 
 
 ## -- Internal --
-def transform(recipe, fname, search_alias, is_to):
+def transform(recipe, fname, search_alias, replacements, discards, is_to):
     '-> _Recipe_ transforms a recipe using dict fname and list-of search_alias'
     if (is_to):
         dict_transforms = load_t(fname)
-                        
+
+        # Discards
+        for ingredient in recipe['ingredients']:
+            for discard in discards:
+                if ingredient['name'].find(discard) != -1:
+                    print 'removing', ingredient
+                    del ingredient
+
+                    
         for ingredient in recipe['ingredients']:
             found = False
             transform = ''
 
+            # Replacements
+            for replacement in replacements.keys():
+                if ingredient['name'].find(replacement) != -1:
+                    ingredient['name'] = replacements[replacement]
+                    continue #move on to next
+          
             # First check our dictionary of transforms
             try: transform = dict_transforms[ingredient['name']]
             except Exception:
                 pass
-  #          print ingredient['name'], transform
             if not (transform == '' or  transform == 'none'):
-                ingredient['name'] = transform
+                if not check_descriptor(ingredient['descriptor'], transform)[0]: 
+                    ingredient['descriptor'].append(transform)
                 found = True
             if transform == 'none':
                 found = True
@@ -69,14 +103,13 @@ def transform(recipe, fname, search_alias, is_to):
                 for alias in search_alias:
                     #safety check
                     for inner in search_alias:
-                        index = ingredient['name'].find(inner)  ##! -- TODO: check modifiers ##!
-                        if index != -1:
-                            found = True
+                        found = check_descriptor(ingredient['descriptor'], inner)[0]
+                        if found:
                             break
                     if not found:
                         if(found_pair(alias, ingredient['name'])):
-                            dict_transforms[ingredient['name']] = alias + ' ' + ingredient['name'] #append
-                            ingredient['name'] = alias + ' ' + ingredient['name'] #update recipe
+                            dict_transforms[ingredient['name']] = alias #append
+                            ingredient['descriptor'].append(alias)  #update recipe
                             found = True
                             break # only need one alias
             # Not in dictionary & Not in bing -> append none to dict
@@ -89,13 +122,23 @@ def transform(recipe, fname, search_alias, is_to):
     else:
         for ingredient in recipe['ingredients']:
             for alias in search_alias:
-                index = ingredient['name'].find(alias)
-                if index != -1:
-                    #cut out 
-                    ingredient['name'] = ingredient['name'][:0] + ingredient['name'][(len(alias)+1):]
+                try:
+                    ingredient['descriptor'].remove(alias)
+                except Exception:
+                    pass
         return recipe
 
-    
+
+def check_descriptor (lst, alias):
+    index = -1
+    ittr = 0 
+    for descriptor in lst:
+        ittr+=1
+        index = descriptor.find(alias)
+        if (index != -1):
+            return [True, ittr]
+    return [False, 0]
+
 ## -- File Management
 def load_t(fname):
     '-> _Dict_ of transform fname'

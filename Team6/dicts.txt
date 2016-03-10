@@ -213,6 +213,7 @@ lite
 long
 lowfat
 low sodium
+low-sodium
 golden
 ground
 heavy
@@ -230,10 +231,12 @@ seeded
 seedless
 skim
 skinless
+sodium-free
 spicy
 unsalted
 reduced fat
-refrigerate
+reduced-fat
+refrigerated
 thick
 whole
 
