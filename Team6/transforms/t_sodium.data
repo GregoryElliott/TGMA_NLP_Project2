@@ -1,25 +1,83 @@
 (dp0
-Vbutter
+V
 p1
-Vunsalted butter
+S'unsalted'
 p2
-sVoy sauce
+sVolive oil
 p3
-S'none'
+g2
+sVcold water
 p4
-sVminced garlic
+g2
+sVchicken broth
 p5
-Vunsalted minced garlic
+g2
+sVfish sauce
 p6
-sVblack pepper
+g2
+sVsesame oil
 p7
-Vunsalted black pepper
+S'none'
 p8
-sVdried parsley
-p9
-Vlow sodium dried parsley
-p10
 sVboneless chicken thighs
+p9
+S'none'
+p10
+sVoyster sauce
 p11
-g4
+S'low sodium'
+p12
+sVsliced green onions
+p13
+g8
+sVrice vinegar
+p14
+g2
+sVparsley
+p15
+S'unsalted'
+p16
+sVminced fresh ginger
+p17
+g8
+sVzucchini
+p18
+g2
+sVred bell pepper
+p19
+g2
+sV1 (ounce)  broccoli coleslaw mix
+p20
+g8
+sVcubed cooked chicken breasts
+p21
+g8
+sVminced garlic
+p22
+S'low sodium'
+p23
+sVchile-garlic sauce
+p24
+g8
+sVfresh cilantro
+p25
+g2
+sVcornstarch
+p26
+g8
+sVblack pepper
+p27
+g2
+sVbutter
+p28
+g16
+sVspaghetti squash
+p29
+g2
+sVsoy sauce
+p30
+g12
+sVpeanut butter
+p31
+g2
 s.

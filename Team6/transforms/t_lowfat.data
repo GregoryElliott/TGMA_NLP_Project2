@@ -1,21 +1,22 @@
 (dp0
 Vbutter
 p1
-S'none'
+S'skim'
 p2
-sVoy sauce
-p3
-g2
 sVminced garlic
+p3
+S'none'
 p4
-g2
-sVblack pepper
+sVparsley
 p5
-g2
-sVdried parsley
+g4
+sVsoy sauce
 p6
-g2
-sVboneless chicken thighs
+g4
+sVblack pepper
 p7
 g2
+sVboneless chicken thighs
+p8
+g4
 s.
