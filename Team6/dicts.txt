@@ -62,6 +62,8 @@ divided
 drained
 dried
 dry
+extra lean
+extra-lean
 extra-virgin
 finely
 firm
@@ -76,6 +78,7 @@ kosher
 lean
 lightly
 long
+low-sodium
 golden
 grated
 ground
@@ -205,7 +208,11 @@ heavy
 jellied
 kosher
 lean
+light
+lite
 long
+lowfat
+low sodium
 golden
 ground
 heavy
@@ -217,14 +224,19 @@ new
 platic
 powdered
 saled
+salted
 seasoning
 seeded
 seedless
+skim
 skinless
 spicy
+unsalted
+reduced fat
 refrigerate
 thick
 whole
+
 
 [preparation]
 baked
