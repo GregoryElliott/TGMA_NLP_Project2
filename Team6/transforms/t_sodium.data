@@ -1,83 +1,161 @@
 (dp0
-V
+Volive oil
 p1
-S'unsalted'
+S'none'
 p2
-sVolive oil
+sVcheese
 p3
-g2
-sVcold water
+S'unsalted'
 p4
-g2
-sVchicken broth
+sVwhite sugar
 p5
-g2
-sVfish sauce
+S'none'
 p6
-g2
-sVsesame oil
+sVbroth
 p7
-S'none'
+S'unsalted'
 p8
-sVboneless chicken thighs
+sVcarrots
 p9
-S'none'
+S'low sodium'
 p10
-sVoyster sauce
+sVginger
 p11
 S'low sodium'
 p12
-sVsliced green onions
+sVhoney
 p13
-g8
-sVrice vinegar
-p14
-g2
-sVparsley
-p15
-S'unsalted'
-p16
-sVminced fresh ginger
-p17
-g8
-sVzucchini
-p18
-g2
-sVred bell pepper
-p19
-g2
-sV1 (ounce)  broccoli coleslaw mix
-p20
-g8
-sVcubed cooked chicken breasts
-p21
-g8
-sVminced garlic
-p22
 S'low sodium'
-p23
-sVchile-garlic sauce
-p24
-g8
-sVfresh cilantro
-p25
-g2
-sVcornstarch
-p26
-g8
-sVblack pepper
-p27
-g2
-sVbutter
-p28
+p14
+sVjuice
+p15
+S'low sodium'
+p16
+sVbrine
+p17
 g16
-sVspaghetti squash
+sVpowder
+p18
+g4
+sVyellow onion
+p19
+g14
+sVmilk
+p20
+S'low sodium'
+p21
+sVwhite pepper
+p22
+S'unsalted'
+p23
+sVparsley
+p24
+S'unsalted'
+p25
+sVBeans
+p26
+S'none'
+p27
+sVgreen onions
+p28
+S'unsalted'
 p29
-g2
-sVsoy sauce
+sVred chilies
 p30
-g12
-sVpeanut butter
+g6
+sVmacaroni
 p31
-g2
+S'low sodium'
+p32
+sVSalsa
+p33
+g27
+sVsauce
+p34
+g12
+sVchicken breast   half
+p35
+S'none'
+p36
+sVgreen pepper
+p37
+g32
+sVbutter
+p38
+g25
+sVchicken broth
+p39
+g12
+sVflour
+p40
+S'unsalted'
+p41
+sVoil
+p42
+g23
+sVwater
+p43
+g23
+sVcornstarch
+p44
+g6
+sVblack pepper
+p45
+S'none'
+p46
+sVgarlic
+p47
+g12
+sVcereal
+p48
+g21
+sVfrying
+p49
+g23
+sVgarlic powder
+p50
+g41
+sVvinegar
+p51
+g23
+sS'none'
+p52
+g10
+sVonion
+p53
+g10
+sVegg
+p54
+g12
+sVribs
+p55
+g10
+sVshrimp
+p56
+g16
+sVseeds
+p57
+g14
+sVflakes
+p58
+S'none'
+p59
+sVorange zest
+p60
+g12
+sVchicken   cubes
+p61
+g6
+sVbread crumbs
+p62
+g21
+sVsteak
+p63
+g14
+sVsalt
+p64
+g12
+sVgreen onion
+p65
+g23
 s.
