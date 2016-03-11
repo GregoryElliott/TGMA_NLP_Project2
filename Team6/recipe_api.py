@@ -6,6 +6,7 @@ from generate_dicts import load
 from transform_healthy import t_low_sodium, t_low_fat 
 import pprint
 import unicodedata
+import os 
 
 GLUTEN_FREE = {'bread crumbs':'corn meal', 'bread':'gluten-free bread', 'pasta':'rice', 'noodles':'rice' ,
                     'wheat flour': 'corn flour', 'matzo':'gluten-free matzo', 'flour tortilla': 'corn tortilla',
@@ -647,12 +648,20 @@ def to_lactose(recipe):
     return recipe
 
 
+def flush():
+    os.system('clear')
+    os.system('cls')
+    
+
+
 def display(recipe):
     num = 0
+    flush()
     print "Ingredients: "
     print "-------------"
     for ingredient in recipe['ingredients']:
-        print ingredient['quantity'], ingredient['measurement'], ingredient['descriptor'], ingredient['name']
+        if ingredient['name'] != 'none':
+            print ingredient['quantity'], ingredient['measurement'], ingredient['descriptor'], ingredient['name']
     print "Steps: "
     print "-------------"
     for step in recipe['steps']:
@@ -662,6 +671,7 @@ def display(recipe):
 
 def start_interface():
     def pr_help():
+        flush()
         print "List of commands:"
         print "lowsodium [mode] \t Transform to/from low-sodium"
         print "lowfat [mode] \t Transform to/from lowfat"
@@ -680,11 +690,14 @@ def start_interface():
    # s_input = sys.stdin.readline()
     print "Parsing recipe"
     recipe = autograder(s_input);
+    flush()
+    display(recipe)
+    print "========================================="
     print "Done! Please enter a transformation with"
     print "[transformation] [mode] with to/for values for [mode]"
     print "Example: lowsodium to /t transforms recipe to a low sodium version"
     print "Enter help for a full list of transformations and commands"
-
+    
     while True:
         s_input = raw_input()
         tokens = s_input.split()
@@ -704,52 +717,62 @@ def start_interface():
         else:
             if tokens[0] == "lowsodium":
                 if tokens[1] == "to":
+                    flush()
                     print "Transforming to low-sodium..."
                     t_low_sodium(recipe, True)
-                    print "Done!"
+                    flush()
+                    display(recipe)
                 elif tokens[1] == "from":
                     print "Transforming from low-sodium..."
                     t_low_sodium(recipe, False)
-                    print "Done!"
+                    flush()
+                    display(recipe)
                 else:
                     print "Please select to/for for [mode]"
             elif tokens[0] == "lowfat":
                 if tokens[1] == "to":
                     print "Transforming to lowfat..."
                     t_low_fat(recipe, True)
-                    print "Done!"
+                    flush()
+                    display(recipe)
                 elif tokens[1] == "from":
                     print "Transforming from lowfat..."
                     t_low_fat(recipe, False)
-                    print "Done!"
+                    flush()
+                    display(recipe)
                 else:
                     print "Please select to/for for [mode]"
             elif tokens[0] == "lactosef":
                 if tokens[1] == "to":
                     print "Transforming to lactose-free..."
                     to_lactose_free(recipe)
-                    print "Done!"
+                    flush()
+                    display(recipe)
                 elif tokens[1] == "from":
                     print "Transforming from lactose-free..."
                     to_lactose(recipe)
-                    print "Done!"
+                    flush()
+                    display(recipe)
                 else:
                     print "Please select to/for for [mode]"
             elif tokens[0] == "glutenf":
                 if tokens[1] == "to":
                     print "Transforming to gluten-free..."
                     to_gluten(recipe)
-                    print "Done!"
+                    flush()
+                    display(recipe)
                 elif tokens[1] == "from":
                     print "Transforming from gluten-free..."
                     to_gluten_free(recipe)
-                    print "Done!"
+                    flush()
+                    display(recipe)
                 else:
                     print "Please select to/for for [mode]"
             elif tokens[0] == "load":
                 print "Loading recipe at URL"
                 recipe = autograder(tokens[1])
-                print "Done!"
+                flush()
+                display(recipe)
             else:
                 print "Unknown command. Type help for commands list or exit to quit"
 

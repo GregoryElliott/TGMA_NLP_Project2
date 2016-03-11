@@ -61,11 +61,10 @@ def transform(recipe, fname, search_alias, replacements, discards, is_to):
         dict_transforms = load_t(fname)
 
         # Discards
-  #      for ingredient in recipe['ingredients']:
-   #         for discard in discards:
-    #            if ingredient['name'].find(discard) != -1:
-     #               print 'removing', ingredient
-      #              del ingredient
+        for ingredient in recipe['ingredients']:
+            for discard in discards:
+                if ingredient['name'].find(discard) != -1:
+                    ingredient['name'] = 'none'
                     
         for ingredient in recipe['ingredients']:
             found = False
