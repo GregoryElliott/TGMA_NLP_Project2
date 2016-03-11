@@ -590,9 +590,9 @@ def to_gluten_free(recipe):
         if ingredient["name"] in GLUTEN_FREE:
             recipe["ingredients"][i]["name"] = GLUTEN_FREE[ingredient["name"]]
         i = i + 1
-    j = 0
     for ingredient in GLUTEN_FREE:
         for step in recipe["steps"]:
+            j = 0
             if ingredient in step:
                 recipe["steps"][j] = recipe["steps"][j].replace(ingredient,GLUTEN_FREE[ingredient])
             j = j + 1
@@ -606,8 +606,9 @@ def to_lactose_free(recipe):
         if ingredient["name"] in LACTOSE_FREE:
             recipe["ingredients"][i]["name"] = LACTOSE_FREE[ingredient["name"]]
         i = i + 1
-    j = 0
+
     for ingredient in LACTOSE_FREE:
+        j = 0
         for step in recipe["steps"]:
             if ingredient in step:
                 recipe["steps"][j] = recipe["steps"][j].replace(ingredient,LACTOSE_FREE[ingredient])
@@ -622,8 +623,8 @@ def to_gluten(recipe):
         if ingredient["name"] in GLUTEN:
             recipe["ingredients"][i]["name"] = GLUTEN[ingredient["name"]]
         i = i + 1
-    j = 0
     for ingredient in GLUTEN:
+        j = 0
         for step in recipe["steps"]:
             if ingredient in step:
                 recipe["steps"][j] = recipe["steps"][j].replace(ingredient,GLUTEN[ingredient])
@@ -638,8 +639,8 @@ def to_lactose(recipe):
         if ingredient["name"] in LACTOSE_FREE:
             recipe["ingredients"][i]["name"] = LACTOSE_FREE[ingredient["name"]]
         i = i + 1
-    j = 0
     for ingredient in LACTOSE:
+        j = 0
         for step in recipe["steps"]:
             if ingredient in step:
                 recipe["steps"][j] = recipe["steps"][j].replace(ingredient,LACTOSE[ingredient])
