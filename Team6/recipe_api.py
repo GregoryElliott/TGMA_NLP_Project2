@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import re
 import __future__
 from generate_dicts import load
+from transform_healthy import t_low_sodium, t_low_fat 
 import pprint
 import unicodedata
 
@@ -42,7 +43,7 @@ COLORS = ["red", "brown", "black", "blue", "green", "orange", "purple", "white",
 
 def get_methods():
     r = requests.get(str("http://www.enchantedlearning.com/wordlist/cooking.shtml"))
-    soup = BeautifulSoup(r.content, "lxml")
+    soup = BeautifulSoup(r.content)
     methods = []
     methods_div = soup.findAll("table")
 
@@ -58,7 +59,7 @@ def get_methods():
 
 def get_foods():
     r = requests.get("http://eatingatoz.com/food-list/")
-    soup = BeautifulSoup(r.content, "lxml")
+    soup = BeautifulSoup(r.content)
     foods = []
     for food in soup.find("div",{"class:","entry"}).findAll("li"):
         try:
@@ -66,12 +67,12 @@ def get_foods():
         except:
             continue        
         foods.append(mystring)
-    print foods
+ #COMMENT   print foods
     return foods
 
 def get_tools():
     r = requests.get(str("http://www.enchantedlearning.com/wordlist/cookingtools.shtml"))
-    soup = BeautifulSoup(r.content, "lxml")
+    soup = BeautifulSoup(r.content)
     tools = {}
     tools_div = soup.findAll("table")
 
@@ -139,7 +140,7 @@ def autograder(url):
     ingredients = soup.findAll("span", { "itemprop" : "ingredients" })
     number_reg = re.compile(r"[\d/]+[\d/ ]*")
     for ingredient_expression in ingredients:
-        print ingredient_expression.contents[0]
+    #COMMENT    print ingredient_expression.contents[0]
         ingredient_expression.contents[0] = remove_parentheses(ingredient_expression.contents[0]).replace(u"\u00E9", "e")
     	ingredient_dict = {}
         quantity = ""
@@ -192,14 +193,14 @@ def autograder(url):
                 ingredient_dict["preparation"] = descriptor.strip(" ")                
             for food in food_list:
                 if food in split_ingredient[1]:
-                    print food
+       #COMMENT             print food
                     no_split = True
                     break
         if no_split:
             ingredient = ingredient.replace(",", "")
         else:            
             ingredient = split_ingredient[0]
-        print ingredient
+  #COMMENT      print ingredient
         split_ingredient = ingredient.split(" ")
         if len(split_ingredient) > 1 and "and" not in ingredient:
             while "" in split_ingredient:
@@ -253,7 +254,7 @@ def autograder(url):
         if step.contents == []:
             method_html.remove(step)
             break
-        print str(step_number) + ". " + step.contents[0]
+   #COMMENT     print str(step_number) + ". " + step.contents[0]
         steps.append(step.contents[0])
         step_number = step_number + 1
         for prim_method in PRIMARY_COOKING_METHODS:
@@ -644,7 +645,17 @@ def to_lactose(recipe):
 
 
 def display(recipe):
-    print recipe
+    num = 0
+    print "Ingredients: "
+    print "-------------"
+    for ingredient in recipe['ingredients']:
+        print ingredient['quantity'], ingredient['measurement'], ingredient['descriptor'], ingredient['name']
+    print "Steps: "
+    print "-------------"
+    for step in recipe['steps']:
+        num+=1
+        stepnum = str(num) + "."
+        print stepnum, step
 
 def start_interface():
     def pr_help():
@@ -663,11 +674,12 @@ def start_interface():
     print "Begin by entering in a URL"
     print "========================================="
     s_input = raw_input()
+   # s_input = sys.stdin.readline()
     print "Parsing recipe"
-    recipe = autograder(raw_input);
+    recipe = autograder(s_input);
     print "Done! Please enter a transformation with"
     print "[transformation] [mode] with to/for values for [mode]"
-    print "Example: low-sodium to /t transforms recipe to a low sodium version"
+    print "Example: lowsodium to /t transforms recipe to a low sodium version"
     print "Enter help for a full list of transformations and commands"
 
     while True:
