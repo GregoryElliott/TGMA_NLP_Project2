@@ -20,7 +20,8 @@ def t_low_sodium (recipe, is_to):
     '-> _Recipe_ Transforms a recipe to a low sodium variat'
     return transform(recipe,
                      't_sodium',
-                     ['low sodium', 'unsalted', 'low-sodium', 'sodium-free'],
+                     ['low sodium',
+                      'low-sodium', 'unsalted', 'sodium-free'],
                      {'marinade': 'cirtus juice',
                       'baking soda': 'eggs'},
                      ['salt', 'salted'],
@@ -30,7 +31,9 @@ def t_low_fat (recipe, is_to):
     '-> _Recipe_ Transforms a recipe to a low fat variant'
     return transform(recipe,
                      't_lowfat',
-                     ['skim', 'lowfat', 'reduced fat'],
+                     [#'skim','reduced fat',
+                      'lowfat'
+                     ],
                      {'ice cream' : 'sorbet', 
                       'cream' : 'milk',
                       'cocoa' : 'cacao',
@@ -58,12 +61,11 @@ def transform(recipe, fname, search_alias, replacements, discards, is_to):
         dict_transforms = load_t(fname)
 
         # Discards
-        for ingredient in recipe['ingredients']:
-            for discard in discards:
-                if ingredient['name'].find(discard) != -1:
-                    print 'removing', ingredient
-                    del ingredient
-
+  #      for ingredient in recipe['ingredients']:
+   #         for discard in discards:
+    #            if ingredient['name'].find(discard) != -1:
+     #               print 'removing', ingredient
+      #              del ingredient
                     
         for ingredient in recipe['ingredients']:
             found = False
@@ -81,7 +83,7 @@ def transform(recipe, fname, search_alias, replacements, discards, is_to):
                 pass
             if not (transform == '' or  transform == 'none'):
                 if not check_descriptor(ingredient['descriptor'], transform)[0]: 
-                    ingredient['descriptor'].append(transform)
+                    ingredient['descriptor'] = transform
                 found = True
             if transform == 'none':
                 found = True
@@ -96,7 +98,7 @@ def transform(recipe, fname, search_alias, replacements, discards, is_to):
                     if not found:
                         if(found_pair(alias, ingredient['name'])):
                             dict_transforms[ingredient['name']] = alias #append
-                            ingredient['descriptor'].append(alias)  #update recipe
+                            ingredient['descriptor'] = alias #update recipe
                             found = True
                             break # only need one alias
             # Not in dictionary & Not in bing -> append none to dict
@@ -110,13 +112,13 @@ def transform(recipe, fname, search_alias, replacements, discards, is_to):
         for ingredient in recipe['ingredients']:
             for alias in search_alias:
                 try:
-                    ingredient['descriptor'].remove(alias)
+                    ingredient['descriptor'] = ""
                 except Exception:
                     pass
         return recipe
 
 
-def check_descriptor (lst, alias):
+def check_descriptorOLD (lst, alias):
     index = -1
     ittr = 0 
     for descriptor in lst:
@@ -124,6 +126,14 @@ def check_descriptor (lst, alias):
         index = descriptor.find(alias)
         if (index != -1):
             return [True, ittr]
+    return [False, 0]
+
+def check_descriptor (s, alias):
+    index = -1
+    index = s.find(alias)
+    ittr = 0 
+    if (index != -1):
+        return [True, ittr]
     return [False, 0]
 
 ## -- File Management

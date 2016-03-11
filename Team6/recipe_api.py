@@ -232,8 +232,11 @@ def autograder(url):
                 if d.strip(" ")[-2:] == "ly":
                     ingredient_dict["prep-description"] = d.strip(" ")
         for word in ingredient_expression.contents[0].split(" "):
-            if word[0].isupper() and word[0] not in ingredient_dict["descriptor"]:
-                ingredient_dict["descriptor"] = word.strip(" ")                
+            try:
+                if word[0].isupper() and word[0] not in ingredient_dict["descriptor"]:
+                    ingredient_dict["descriptor"] = word.strip(" ")
+            except Exception:
+                ingredient_dict["descriptor"] = ""
         for p in PREPARATION:
             if p in ingredient_expression.contents[0].lower():
                 ingredient_dict["preparation"] = p.strip(" ")
@@ -577,7 +580,7 @@ def change_method(results):
             else:
                 print "Please select a number in the range presented."
         
-        print results   
+    #    print results   
 
 def to_gluten_free(recipe):
     ingredients = recipe["ingredients"]
@@ -716,7 +719,7 @@ def start_interface():
                     t_low_fat(recipe, True)
                     print "Done!"
                 elif tokens[1] == "from":
-                    print "Transforming from lowfatlow-sodium..."
+                    print "Transforming from lowfat..."
                     t_low_fat(recipe, False)
                     print "Done!"
                 else:
@@ -750,8 +753,10 @@ def start_interface():
             else:
                 print "Unknown command. Type help for commands list or exit to quit"
 
+#tR= autograder("http://allrecipes.com/recipe/236391/cilantro-garlic-lime-sauteed-shrimp")
 def main():
     start_interface();
+    return
     
 if __name__ == "__main__":
     main()
