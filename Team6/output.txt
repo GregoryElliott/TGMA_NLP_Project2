@@ -1,15 +1,425 @@
-<span class="recipe-ingred_txt added" data-id="16157" data-nameid="16157" itemprop="ingredients">1/2 cup butter</span>
-{'ingredient': u'1/2 cup butter', 'quantity': 1}
-<span class="recipe-ingred_txt added" data-id="4342" data-nameid="4342" itemprop="ingredients">3 tablespoons minced garlic</span>
-{'ingredient': u'3 tablespoons minced garlic', 'quantity': 1}
-<span class="recipe-ingred_txt added" data-id="2882" data-nameid="2882" itemprop="ingredients">3 tablespoons soy sauce</span>
-{'ingredient': u'3 tablespoons soy sauce', 'quantity': 1}
-<span class="recipe-ingred_txt added" data-id="16406" data-nameid="16406" itemprop="ingredients">1/4 teaspoon black pepper</span>
-{'ingredient': u'1/4 teaspoon black pepper', 'quantity': 1}
-<span class="recipe-ingred_txt added" data-id="16405" data-nameid="16405" itemprop="ingredients">1 tablespoon dried parsley</span>
-{'ingredient': u'1 tablespoon dried parsley', 'quantity': 1}
-<span class="recipe-ingred_txt added" data-id="6522" data-nameid="6522" itemprop="ingredients">6 boneless chicken thighs, with skin</span>
-{'ingredient': u'6 boneless chicken thighs, with skin', 'quantity': 1}
-<span class="recipe-ingred_txt added" data-id="16405" data-nameid="16405" itemprop="ingredients">dried parsley, to taste</span>
-{'ingredient': u'dried parsley, to taste', 'quantity': 1}
-{'url': 'http://allrecipes.com/recipe/80827/easy-garlic-broiled-chicken/', 'ingredients': [{'ingredient': u'1/2 cup butter', 'quantity': 1}, {'ingredient': u'3 tablespoons minced garlic', 'quantity': 1}, {'ingredient': u'3 tablespoons soy sauce', 'quantity': 1}, {'ingredient': u'1/4 teaspoon black pepper', 'quantity': 1}, {'ingredient': u'1 tablespoon dried parsley', 'quantity': 1}, {'ingredient': u'6 boneless chicken thighs, with skin', 'quantity': 1}, {'ingredient': u'dried parsley, to taste', 'quantity': 1}]}
+['learn more', 'template:cooking techniques', 'amandine ', 'amylolytic process', 'backwoods cooking', 'baghaar', 'baking', 'barbecue', 'basting ', 'biomass briquettes', 'blackening ', 'blanching ', 'boiling', 'braising', 'breading', 'brining', 'broasting', 'brochette', 'browning ', 'buccan', 'caramelization', 'carry over cooking', 'casserole', 'charbroiler', 'chaunk', 'clay pot cooking', 'coagulated protein', 'coddling', 'concasse', 'conche', 'confit', 'cooking with alcohol', 'creaming ', 'culinary triangle', 'curdling', 'curing ', 'deep frying', 'deglazing ', 'degreasing', 'dredging ', 'dry roasting', 'food drying', 'dum pukht', 'earth oven', 'en papillote', 'en vessie', 'engastration', 'engine cooking', 'fire', 'flattop grill', 'foam ', 'fondue', 'frying', 'gentle frying', 'glaze ', 'grilling', 'hibachi', 'high-altitude cooking', 'hot salt frying', 'indirect grilling', 'infusion', 'jugging', 'juicing', 'kalua', 'kinpira', 'list of cooking techniques', 'list of twice-baked foods', 'low-temperature cooking', 'maceration ', 'marination', 'meatloaf', 'mongolian barbecue', 'nixtamalization', 'outdoor cooking', 'pan frying', 'parbaking', 'parboiling', 'paste ', 'pellicle ', 'pickling', 'poaching ', 'pre-ferment', 'pressure cooking', 'pressure frying', 'proofing ', 'reduction ', 'rendering ', 'ricing ', 'roasting', 'robatayaki', 'rotisserie', 'salisbury steak', 'schwenker', 'cured fish', 'searing', 'seasoning', 'separating eggs', 'shallow frying', 'shirred eggs', 'shocking ', 'shrivelling', 'simmering', 'slow cooker', 'smoking ', 'smothering ', 'souring', 'sous-vide', 'spatchcock', 'spherification', 'steaming', 'steeping', 'stew', 'stir frying', 'straight dough', 'stuffing', 'sugar panning', 'supreme ', 'sweating ', 'swiss steak', 'tataki', 'tenderizing', 'teriyaki', 'thermal cooking', 'turbo cooking', 'turkey fryer']
+1/2 cup butter
+1/2 cup butter
+3 tablespoons minced garlic
+3 tablespoons minced garlic
+3 tablespoons soy sauce
+3 tablespoons soy sauce
+1/4 teaspoon black pepper
+1/4 teaspoon black pepper
+1 tablespoon dried parsley
+1 tablespoon dried parsley
+6 boneless chicken thighs, with skin
+6 boneless chicken thighs, with skin
+dried parsley, to taste
+dried parsley, to taste
+1. Preheat the oven broiler. Lightly grease a baking pan.
+2. In a microwave safe bowl, mix the butter, garlic, soy sauce, pepper, and parsley. Cook 2 minutes on High in the microwave, or until butter is melted.
+3. Arrange chicken on the baking pan, and coat with the butter mixture, reserving some of the mixture for basting.
+4. Broil chicken 20 minutes in the preheated oven, until juices run clear, turning occasionally and basting with remaining butter mixture. Sprinkle with parsley to serve.
+knife
+baking pan
+microwave
+baster
+bowl, microwave safe bowl, 1, 2, 0.333333
+bowl, oven, 0, 2, 0.000000
+broiler, microwave safe bowl, 0, 4, 0.000000
+broiler, oven, 0, 2, 0.000000
+oven, microwave safe bowl, 0, 4, 0.000000
+oven, oven, 1, 0, 1.000000
+pan, microwave safe bowl, 0, 4, 0.000000
+pan, oven, 0, 2, 0.000000
+brining, arranging, 0, 2, 0.000000
+brining, preheating, 0, 2, 0.000000
+brining, sprinkle, 0, 2, 0.000000
+brining, grease, 0, 2, 0.000000
+brining, microwaving, 0, 2, 0.000000
+brining, melting, 0, 2, 0.000000
+brining, coat, 0, 2, 0.000000
+brining, preheat, 0, 2, 0.000000
+brining, coating, 0, 2, 0.000000
+brining, microwave, 0, 2, 0.000000
+brining, broiling, 0, 2, 0.000000
+brining, greasing, 0, 2, 0.000000
+brining, mix, 0, 2, 0.000000
+brining, melted, 0, 2, 0.000000
+brining, turning, 0, 2, 0.000000
+brining, sprinkling, 0, 2, 0.000000
+brining, mixing, 0, 2, 0.000000
+brining, broil, 0, 2, 0.000000
+brining, basting, 0, 2, 0.000000
+brining, arrange, 0, 2, 0.000000
+jugging, arranging, 0, 2, 0.000000
+jugging, preheating, 0, 2, 0.000000
+jugging, sprinkle, 0, 2, 0.000000
+jugging, grease, 0, 2, 0.000000
+jugging, microwaving, 0, 2, 0.000000
+jugging, melting, 0, 2, 0.000000
+jugging, coat, 0, 2, 0.000000
+jugging, preheat, 0, 2, 0.000000
+jugging, coating, 0, 2, 0.000000
+jugging, microwave, 0, 2, 0.000000
+jugging, broiling, 0, 2, 0.000000
+jugging, greasing, 0, 2, 0.000000
+jugging, mix, 0, 2, 0.000000
+jugging, melted, 0, 2, 0.000000
+jugging, turning, 0, 2, 0.000000
+jugging, sprinkling, 0, 2, 0.000000
+jugging, mixing, 0, 2, 0.000000
+jugging, broil, 0, 2, 0.000000
+jugging, basting, 0, 2, 0.000000
+jugging, arrange, 0, 2, 0.000000
+juicing, arranging, 0, 2, 0.000000
+juicing, preheating, 0, 2, 0.000000
+juicing, sprinkle, 0, 2, 0.000000
+juicing, grease, 0, 2, 0.000000
+juicing, microwaving, 0, 2, 0.000000
+juicing, melting, 0, 2, 0.000000
+juicing, coat, 0, 2, 0.000000
+juicing, preheat, 0, 2, 0.000000
+juicing, coating, 0, 2, 0.000000
+juicing, microwave, 0, 2, 0.000000
+juicing, broiling, 0, 2, 0.000000
+juicing, greasing, 0, 2, 0.000000
+juicing, mix, 0, 2, 0.000000
+juicing, melted, 0, 2, 0.000000
+juicing, turning, 0, 2, 0.000000
+juicing, sprinkling, 0, 2, 0.000000
+juicing, mixing, 0, 2, 0.000000
+juicing, broil, 0, 2, 0.000000
+juicing, basting, 0, 2, 0.000000
+juicing, arrange, 0, 2, 0.000000
+baking, arranging, 0, 2, 0.000000
+baking, preheating, 0, 2, 0.000000
+baking, sprinkle, 0, 2, 0.000000
+baking, grease, 0, 2, 0.000000
+baking, microwaving, 0, 2, 0.000000
+baking, melting, 0, 2, 0.000000
+baking, coat, 0, 2, 0.000000
+baking, preheat, 0, 2, 0.000000
+baking, coating, 0, 2, 0.000000
+baking, microwave, 0, 2, 0.000000
+baking, broiling, 0, 2, 0.000000
+baking, greasing, 0, 2, 0.000000
+baking, mix, 0, 2, 0.000000
+baking, melted, 0, 2, 0.000000
+baking, turning, 0, 2, 0.000000
+baking, sprinkling, 0, 2, 0.000000
+baking, mixing, 0, 2, 0.000000
+baking, broil, 0, 2, 0.000000
+baking, basting, 0, 2, 0.000000
+baking, arrange, 0, 2, 0.000000
+basting , arranging, 0, 2, 0.000000
+basting , preheating, 0, 2, 0.000000
+basting , sprinkle, 0, 2, 0.000000
+basting , grease, 0, 2, 0.000000
+basting , microwaving, 0, 2, 0.000000
+basting , melting, 0, 2, 0.000000
+basting , coat, 0, 2, 0.000000
+basting , preheat, 0, 2, 0.000000
+basting , coating, 0, 2, 0.000000
+basting , microwave, 0, 2, 0.000000
+basting , broiling, 0, 2, 0.000000
+basting , greasing, 0, 2, 0.000000
+basting , mix, 0, 2, 0.000000
+basting , melted, 0, 2, 0.000000
+basting , turning, 0, 2, 0.000000
+basting , sprinkling, 0, 2, 0.000000
+basting , mixing, 0, 2, 0.000000
+basting , broil, 0, 2, 0.000000
+basting , basting, 1, 0, 1.000000
+basting , arrange, 0, 2, 0.000000
+butter
+[u'butter']
+cup
+[u'cup']
+0.5
+[0.5]
+[]
+[]
+[]
+[]
+---
+minced garlic
+[u'garlic', u'minced garlic']
+tablespoons 
+[u'tablespoons', u'tablespoon']
+3
+[3]
+[]
+[]
+[]
+[u'minced']
+---
+soy sauce
+[u'soy sauce']
+tablespoons 
+[u'tablespoons', u'tablespoon']
+3
+[3]
+[]
+[]
+[]
+[]
+---
+black pepper
+[u'pepper', u'black pepper']
+teaspoon
+[u'teaspoon']
+0.25
+[0.25]
+[]
+[u'black']
+[]
+[]
+---
+parsley
+[u'parsley', u'dried parsley']
+tablespoon
+[u'tablespoon']
+1
+[1]
+['dried']
+[u'dried']
+['dried']
+[u'dried']
+---
+boneless chicken thighs
+[u'chicken', u'chicken thighs', u'boneless chicken thighs', u'boneless chicken', u'boneless chicken thighs, with skin']
+unit
+[u'thighs', u'unit', u'units', u'discrete']
+6
+[6]
+[]
+[u'boneless', u'with skin', u'thighs', u'boneless thighs, with skin']
+[u'with skin']
+[u'boneless', u'with skin']
+---
+parsley
+[u'parsley', u'dried parsley', u'dried parsley, to taste']
+to taste
+[u'to taste', u'taste']
+1
+[0, 1, u'none']
+['dried']
+[u'dried', u'dried, to taste']
+[u'', 'dried']
+[u'dried']
+---
+Recipe	Ingredients	Primary Method	Methods	Tools
+Recipe 1:	0.704	1	0.091	0.889
+['learn more', 'template:cooking techniques', 'amandine ', 'amylolytic process', 'backwoods cooking', 'baghaar', 'baking', 'barbecue', 'basting ', 'biomass briquettes', 'blackening ', 'blanching ', 'boiling', 'braising', 'breading', 'brining', 'broasting', 'brochette', 'browning ', 'buccan', 'caramelization', 'carry over cooking', 'casserole', 'charbroiler', 'chaunk', 'clay pot cooking', 'coagulated protein', 'coddling', 'concasse', 'conche', 'confit', 'cooking with alcohol', 'creaming ', 'culinary triangle', 'curdling', 'curing ', 'deep frying', 'deglazing ', 'degreasing', 'dredging ', 'dry roasting', 'food drying', 'dum pukht', 'earth oven', 'en papillote', 'en vessie', 'engastration', 'engine cooking', 'fire', 'flattop grill', 'foam ', 'fondue', 'frying', 'gentle frying', 'glaze ', 'grilling', 'hibachi', 'high-altitude cooking', 'hot salt frying', 'indirect grilling', 'infusion', 'jugging', 'juicing', 'kalua', 'kinpira', 'list of cooking techniques', 'list of twice-baked foods', 'low-temperature cooking', 'maceration ', 'marination', 'meatloaf', 'mongolian barbecue', 'nixtamalization', 'outdoor cooking', 'pan frying', 'parbaking', 'parboiling', 'paste ', 'pellicle ', 'pickling', 'poaching ', 'pre-ferment', 'pressure cooking', 'pressure frying', 'proofing ', 'reduction ', 'rendering ', 'ricing ', 'roasting', 'robatayaki', 'rotisserie', 'salisbury steak', 'schwenker', 'cured fish', 'searing', 'seasoning', 'separating eggs', 'shallow frying', 'shirred eggs', 'shocking ', 'shrivelling', 'simmering', 'slow cooker', 'smoking ', 'smothering ', 'souring', 'sous-vide', 'spatchcock', 'spherification', 'steaming', 'steeping', 'stew', 'stir frying', 'straight dough', 'stuffing', 'sugar panning', 'supreme ', 'sweating ', 'swiss steak', 'tataki', 'tenderizing', 'teriyaki', 'thermal cooking', 'turbo cooking', 'turkey fryer']
+1 tablespoon olive oil
+1 tablespoon olive oil
+6 skinless, boneless chicken breast halves
+6 skinless, boneless chicken breast halves
+1 lemon
+1 lemon
+1/4 cup butter
+1/4 cup butter
+3 cups fresh sliced mushrooms
+3 cups fresh sliced mushrooms
+2 tablespoons all-purpose flour
+2 tablespoons all-purpose flour
+1/2 cup chicken broth, or more as needed
+1/2 cup chicken broth, or more as needed
+1 tablespoon chopped fresh parsley
+1 tablespoon chopped fresh parsley
+1. Preheat oven to 400 degrees F (205 degrees C).
+2. Pour olive oil in an 8x8-inch glass baking dish. Place the chicken breasts in the dish, coating each side with oil. Squeeze the juice of 1/2 lemon over each chicken breast. Slice the rest of the lemon and place a lemon slice on top of each chicken piece.
+3. Bake in the preheated oven until no longer pink in the center and the juices run clear, 30 to 40 minutes. An instant-read thermometer inserted into the center should read at least 165 degrees F (74 degrees C).
+4. Melt butter in a skillet over medium heat; add mushrooms. Cook and stir until mushrooms are brown and liquid is evaporated, about 6 minutes. Sprinkle flour over mushrooms and stir until coated. Add chicken broth, stirring to make a medium-thick sauce. Allow sauce to reduce, adjusting with a little more broth to make a creamy sauce. Add fresh parsley at the last minute. Spoon the sauce over the baked chicken breasts.
+knife
+thermometer
+spoon
+pot, skillet, 0, 2, 0.000000
+pot, baking dish, 0, 3, 0.000000
+pot, oven, 0, 2, 0.000000
+bowl, skillet, 0, 2, 0.000000
+bowl, baking dish, 0, 3, 0.000000
+bowl, oven, 0, 2, 0.000000
+baking pan, skillet, 0, 3, 0.000000
+baking pan, baking dish, 1, 2, 0.333333
+baking pan, oven, 0, 3, 0.000000
+oven, skillet, 0, 2, 0.000000
+oven, baking dish, 0, 3, 0.000000
+oven, oven, 1, 0, 1.000000
+dish, skillet, 0, 2, 0.000000
+dish, baking dish, 1, 1, 0.500000
+dish, oven, 0, 2, 0.000000
+skillet, skillet, 1, 0, 1.000000
+skillet, baking dish, 0, 3, 0.000000
+skillet, oven, 0, 2, 0.000000
+brining, sprinkle, 0, 2, 0.000000
+brining, slice, 0, 2, 0.000000
+brining, coated, 0, 2, 0.000000
+brining, coat, 0, 2, 0.000000
+brining, preheat, 0, 2, 0.000000
+brining, coating, 0, 2, 0.000000
+brining, spoon, 0, 2, 0.000000
+brining, pour, 0, 2, 0.000000
+brining, reduce, 0, 2, 0.000000
+brining, add, 0, 2, 0.000000
+brining, place, 0, 2, 0.000000
+brining, melt, 0, 2, 0.000000
+brining, cook, 0, 2, 0.000000
+brining, squeeze, 0, 2, 0.000000
+brining, stir, 0, 2, 0.000000
+brining, adjusting, 0, 2, 0.000000
+brining, stirring, 0, 2, 0.000000
+jugging, sprinkle, 0, 2, 0.000000
+jugging, slice, 0, 2, 0.000000
+jugging, coated, 0, 2, 0.000000
+jugging, coat, 0, 2, 0.000000
+jugging, preheat, 0, 2, 0.000000
+jugging, coating, 0, 2, 0.000000
+jugging, spoon, 0, 2, 0.000000
+jugging, pour, 0, 2, 0.000000
+jugging, reduce, 0, 2, 0.000000
+jugging, add, 0, 2, 0.000000
+jugging, place, 0, 2, 0.000000
+jugging, melt, 0, 2, 0.000000
+jugging, cook, 0, 2, 0.000000
+jugging, squeeze, 0, 2, 0.000000
+jugging, stir, 0, 2, 0.000000
+jugging, adjusting, 0, 2, 0.000000
+jugging, stirring, 0, 2, 0.000000
+juicing, sprinkle, 0, 2, 0.000000
+juicing, slice, 0, 2, 0.000000
+juicing, coated, 0, 2, 0.000000
+juicing, coat, 0, 2, 0.000000
+juicing, preheat, 0, 2, 0.000000
+juicing, coating, 0, 2, 0.000000
+juicing, spoon, 0, 2, 0.000000
+juicing, pour, 0, 2, 0.000000
+juicing, reduce, 0, 2, 0.000000
+juicing, add, 0, 2, 0.000000
+juicing, place, 0, 2, 0.000000
+juicing, melt, 0, 2, 0.000000
+juicing, cook, 0, 2, 0.000000
+juicing, squeeze, 0, 2, 0.000000
+juicing, stir, 0, 2, 0.000000
+juicing, adjusting, 0, 2, 0.000000
+juicing, stirring, 0, 2, 0.000000
+baking, sprinkle, 0, 2, 0.000000
+baking, slice, 0, 2, 0.000000
+baking, coated, 0, 2, 0.000000
+baking, coat, 0, 2, 0.000000
+baking, preheat, 0, 2, 0.000000
+baking, coating, 0, 2, 0.000000
+baking, spoon, 0, 2, 0.000000
+baking, pour, 0, 2, 0.000000
+baking, reduce, 0, 2, 0.000000
+baking, add, 0, 2, 0.000000
+baking, place, 0, 2, 0.000000
+baking, melt, 0, 2, 0.000000
+baking, cook, 0, 2, 0.000000
+baking, squeeze, 0, 2, 0.000000
+baking, stir, 0, 2, 0.000000
+baking, adjusting, 0, 2, 0.000000
+baking, stirring, 0, 2, 0.000000
+olive oil
+[u'olive oil']
+tablespoon
+[u'tablespoons', u'tablespoon']
+1
+[1]
+[]
+[]
+[]
+[]
+---
+skinless
+[u'chicken', u'chicken breasts', u'chicken breast halves', u'boneless chicken breast halves', u'boneless chicken', u'skinless chicken breasts', u'skinless, boneless chicken breast halves']
+unit
+[u'breast halves', u'unit', u'units', u'discrete']
+6
+[6]
+[]
+[u'boneless', u'skinless', u'breast halves', u'skinless, boneless']
+[u'boneless chicken breast halves']
+[u'boneless', u'skinless']
+---
+lemon
+[u'lemon']
+unit
+[u'unit', u'units', u'discrete']
+1
+[1]
+[]
+[]
+[]
+[]
+---
+butter
+[u'butter']
+cup
+[u'cup']
+0.25
+[0.25]
+[]
+[]
+[]
+[]
+---
+fresh sliced mushrooms
+[u'mushrooms']
+cups 
+[u'cup']
+3
+[3]
+[]
+[u'fresh', u'sliced', u'fresh sliced']
+[]
+[u'sliced']
+---
+all-purpose flour
+[u'flour', u'all-purpose flour']
+tablespoons 
+[u'tablespoon', u'tablespoons']
+2
+[2]
+[]
+[u'all-purpose']
+[]
+[]
+---
+chicken broth
+[u'chicken broth', u'broth']
+cup
+[u'cup']
+0.5
+[1]
+[]
+[u'chicken']
+[u'or more as needed']
+[]
+---
+fresh parsley
+[u'parsley', u'fresh parsley']
+tablespoon
+[u'tablespoon', u'tablespoons']
+1
+[1]
+[]
+[u'fresh', u'chopped']
+['chopped']
+[u'chopped']
+---
+Recipe	Ingredients	Primary Method	Methods	Tools
+Recipe 2:	0.576	1	0.000	0.917
+['learn more', 'template:cooking techniques', 'amandine ', 'amylolytic process', 'backwoods cooking', 'baghaar', 'baking', 'barbecue', 'basting ', 'biomass briquettes', 'blackening ', 'blanching ', 'boiling', 'braising', 'breading', 'brining', 'broasting', 'brochette', 'browning ', 'buccan', 'caramelization', 'carry over cooking', 'casserole', 'charbroiler', 'chaunk', 'clay pot cooking', 'coagulated protein', 'coddling', 'concasse', 'conche', 'confit', 'cooking with alcohol', 'creaming ', 'culinary triangle', 'curdling', 'curing ', 'deep frying', 'deglazing ', 'degreasing', 'dredging ', 'dry roasting', 'food drying', 'dum pukht', 'earth oven', 'en papillote', 'en vessie', 'engastration', 'engine cooking', 'fire', 'flattop grill', 'foam ', 'fondue', 'frying', 'gentle frying', 'glaze ', 'grilling', 'hibachi', 'high-altitude cooking', 'hot salt frying', 'indirect grilling', 'infusion', 'jugging', 'juicing', 'kalua', 'kinpira', 'list of cooking techniques', 'list of twice-baked foods', 'low-temperature cooking', 'maceration ', 'marination', 'meatloaf', 'mongolian barbecue', 'nixtamalization', 'outdoor cooking', 'pan frying', 'parbaking', 'parboiling', 'paste ', 'pellicle ', 'pickling', 'poaching ', 'pre-ferment', 'pressure cooking', 'pressure frying', 'proofing ', 'reduction ', 'rendering ', 'ricing ', 'roasting', 'robatayaki', 'rotisserie', 'salisbury steak', 'schwenker', 'cured fish', 'searing', 'seasoning', 'separating eggs', 'shallow frying', 'shirred eggs', 'shocking ', 'shrivelling', 'simmering', 'slow cooker', 'smoking ', 'smothering ', 'souring', 'sous-vide', 'spatchcock', 'spherification', 'steaming', 'steeping', 'stew', 'stir frying', 'straight dough', 'stuffing', 'sugar panning', 'supreme ', 'sweating ', 'swiss steak', 'tataki', 'tenderizing', 'teriyaki', 'thermal cooking', 'turbo cooking', 'turkey fryer']
+1 pound extra lean ground beef
+1 pound extra lean ground beef
+1/2 teaspoon sea salt
+1/2 teaspoon sea salt
+1 small onion, diced
+1 small onion, diced
+1/2 teaspoon garlic salt
+1/2 teaspoon garlic salt
+1 1/2 teaspoons Italian seasoning
+1 1/2 teaspoons Italian seasoning
+3/4 teaspoon dried oregano
+3/4 teaspoon dried oregano
+3/4 teaspoon crushed red pepper flakes
+3/4 teaspoon crushed red pepper flakes
