@@ -33,5 +33,5 @@ $ python recipe_api.py
 
    [BeautifulSoup]: <http://www.crummy.com/software/BeautifulSoup/>
    [Requests]: <https://pypi.python.org/pypi/requests/>
-   [PyBingSearch]: <https://pypi.python.org/pypi/requests/>
+   [PyBingSearch]: <https://pypi.python.org/pypi/py-bing-search/0.1.5/>
 
