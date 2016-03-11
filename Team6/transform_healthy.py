@@ -4,23 +4,10 @@
 # Requirements: py-bing-search
 # pip install py-bing-search
 #------------------------------------------------------------------------------
-# TODO:
-# Exceptions: butter(lowfat)
-# https://en.wikipedia.org/wiki/Glycemic_index
-# http://www.nhlbi.nih.gov/health/educational/lose_wt/eat/shop_lcal_fat.htm
-# http://greatist.com/health/83-healthy-recipe-substitutions
-#------------------------------------------------------------------------------
 
 from py_bing_search import PyBingSearch
 import pickle
 import os.path
-
-## -- Temp (Testing)
-from recipe_api import autograder
-tR =  autograder("http://allrecipes.com/Recipe/Easy-Garlic-Broiled-Chicken/")
-SaltedIngredients = {'ingredients': [{'measurement': u'cup', 'name': u'unsalted butter', 'quantity': 0.5}, {'measurement': u'tablespoon', 'name': u'unsalted minced garlic', 'quantity': 3}, {'measurement': u'tablespoon', 'name': u'oy sauce', 'quantity': 3}, {'measurement': u'teaspoon', 'name': u'unsalted black pepper', 'quantity': 0.25}, {'measurement': u'tablespoon', 'name': u'low sodium dried parsley', 'quantity': 1}, {'preparation': u'with skin', 'descriptor': u'with skin', 'measurement': 'unit', 'name': u'boneless chicken thighs', 'quantity': 6}, {'preparation': u'to taste', 'descriptor': u'to taste', 'measurement': 'unit', 'name': u'low sodium dried parsley', 'quantity': 1}], 'url': 'http://allrecipes.com/Recipe/Easy-Garlic-Broiled-Chicken/', 'cooking methods': ['lightly', '', 'melted'], 'primary cooking method': ['broil'], 'max': {'cooking tools': 7, 'cooking methods': 3, 'primary cooking method': 1}, 'cooking tools': ['knife', 'oven', 'broiler', 'baking pan', 'microwave', 'microwave safe bowl', 'baster']}
-# ERROR: http://allrecipes.com/recipe/172854/spaghetti-squash-saute/
-## -- End Temp (Testing) 
 
 ## -- Parameters --
 NUM_SEARCH_RESULTS = 10

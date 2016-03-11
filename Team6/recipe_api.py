@@ -286,8 +286,7 @@ def autograder(url):
 
     return results
 
-def change_method(url):
-        results = autograder(url)
+def change_method(results):
         primary_method =  results["primary cooking method"]
         ingredient = results["ingredients"]
         primary_ingredient = None
@@ -579,8 +578,7 @@ def change_method(url):
         
         print results   
 
-def to_gluten_free(url):
-    recipe = autograder(url)
+def to_gluten_free(recipe):
     ingredients = recipe["ingredients"]
     i = 0
     for ingredient in ingredients:
@@ -596,8 +594,7 @@ def to_gluten_free(url):
     print recipe
     return recipe
 
-def to_lactose_free(url):
-    recipe = autograder(url)
+def to_lactose_free(recipe):
     ingredients = recipe["ingredients"]
     i = 0
     for ingredient in ingredients:
@@ -613,8 +610,7 @@ def to_lactose_free(url):
     print recipe
     return recipe
 
-def to_gluten(url):
-    recipe = autograder(url)
+def to_gluten(recipe):
     ingredients = recipe["ingredients"]
     i = 0
     for ingredient in ingredients:
@@ -630,8 +626,7 @@ def to_gluten(url):
     print recipe
     return recipe
 
-def to_lactose(url):
-    recipe = autograder(url)
+def to_lactose(recipe):
     ingredients = recipe["ingredients"]
     i = 0
     for ingredient in ingredients:
@@ -647,18 +642,104 @@ def to_lactose(url):
     print recipe
     return recipe
 
-def main():
-	#pprint.pprint(autograder("http://allrecipes.com/Recipe/Easy-Garlic-Broiled-Chicken/"))
-    #pprint.pprint(autograder("http://allrecipes.com/Recipe/Baked-Lemon-Chicken-with-Mushroom-Sauce/"))
-    #pprint.pprint(autograder("http://allrecipes.com/Recipe/Meatball-Nirvana/"))
-    #pprint.pprint(autograder("http://allrecipes.com/recipe/easy-meatloaf/"))
-    #autograder("http://allrecipes.com/Recipe/Easy-Garlic-Broiled-Chicken/")
-    #get_foods()
-    #change_method("http://allrecipes.com/Recipe/Easy-Garlic-Broiled-Chicken/")
-    pprint.pprint(to_gluten_free("http://allrecipes.com/Recipe/Easy-Garlic-Broiled-Chicken/"))
-    pprint.pprint(to_lactose_free("http://allrecipes.com/Recipe/Easy-Garlic-Broiled-Chicken/"))
-    pprint.pprint(to_gluten("http://allrecipes.com/Recipe/Easy-Garlic-Broiled-Chicken/"))
-    pprint.pprint(to_lactose("http://allrecipes.com/Recipe/Easy-Garlic-Broiled-Chicken/"))
 
+def display(recipe):
+    print recipe
+
+def start_interface():
+    def pr_help():
+        print "List of commands:"
+        print "lowsodium [mode] \t Transform to/from low-sodium"
+        print "lowfat [mode] \t Transform to/from lowfat"
+        print "glutenf [mode] \t Transform to/from gluten-free"
+        print "lactosef [mode] \t Transform to/from lactose-free"
+        print "method  \t Enter to the recipe cooking method"
+        print "dispay \t Displays the current recipe"
+        print "load [URL] \t Changes recipe to the selected URL"
+        print "help \t Display all available of commands"
+        print "exit \t Quits the program"
+    print "Welcome to ARP (AllRecipes Parser)!"
+    print "=========================================="
+    print "Begin by entering in a URL"
+    print "========================================="
+    s_input = raw_input()
+    print "Parsing recipe"
+    recipe = autograder(raw_input);
+    print "Done! Please enter a transformation with"
+    print "[transformation] [mode] with to/for values for [mode]"
+    print "Example: low-sodium to /t transforms recipe to a low sodium version"
+    print "Enter help for a full list of transformations and commands"
+
+    while True:
+        s_input = raw_input()
+        tokens = s_input.split()
+        if len(tokens) > 2:
+            print "Unknown command. Type help for commands list or exit to quit"
+        elif len(tokens) < 2:
+            if tokens[0] == "help":
+                pr_help()
+            elif tokens[0] == "method":
+                change_method(recipe);
+            elif tokens[0] == "display":
+                display(recipe);
+            elif tokens[0] == "exit":
+                return
+            else:
+                print "Unknown command. Type help for commands list or exit to quit"
+        else:
+            if tokens[0] == "lowsodium":
+                if tokens[1] == "to":
+                    print "Transforming to low-sodium..."
+                    t_low_sodium(recipe, True)
+                    print "Done!"
+                elif tokens[1] == "from":
+                    print "Transforming from low-sodium..."
+                    t_low_sodium(recipe, False)
+                    print "Done!"
+                else:
+                    print "Please select to/for for [mode]"
+            elif tokens[0] == "lowfat":
+                if tokens[1] == "to":
+                    print "Transforming to lowfat..."
+                    t_low_fat(recipe, True)
+                    print "Done!"
+                elif tokens[1] == "from":
+                    print "Transforming from lowfatlow-sodium..."
+                    t_low_fat(recipe, False)
+                    print "Done!"
+                else:
+                    print "Please select to/for for [mode]"
+            elif tokens[0] == "lactosef":
+                if tokens[1] == "to":
+                    print "Transforming to lactose-free..."
+                    to_lactose_free(recipe)
+                    print "Done!"
+                elif tokens[1] == "from":
+                    print "Transforming from lactose-free..."
+                    to_lactose(recipe)
+                    print "Done!"
+                else:
+                    print "Please select to/for for [mode]"
+            elif tokens[0] == "glutenf":
+                if tokens[1] == "to":
+                    print "Transforming to gluten-free..."
+                    to_gluten(recipe)
+                    print "Done!"
+                elif tokens[1] == "from":
+                    print "Transforming from gluten-free..."
+                    to_gluten_free(recipe)
+                    print "Done!"
+                else:
+                    print "Please select to/for for [mode]"
+            elif tokens[0] == "load":
+                print "Loading recipe at URL"
+                recipe = autograder(tokens[1])
+                print "Done!"
+            else:
+                print "Unknown command. Type help for commands list or exit to quit"
+
+def main():
+    start_interface();
+    
 if __name__ == "__main__":
     main()
