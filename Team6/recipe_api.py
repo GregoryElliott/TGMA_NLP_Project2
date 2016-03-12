@@ -3,8 +3,10 @@ from bs4 import BeautifulSoup
 import re
 import __future__
 from generate_dicts import load
+from transform_healthy import t_low_sodium, t_low_fat 
 import pprint
 import unicodedata
+import os 
 
 GLUTEN_FREE = {'bread crumbs':'corn meal', 'bread':'gluten-free bread', 'pasta':'rice', 'noodles':'rice' ,
                     'wheat flour': 'corn flour', 'matzo':'gluten-free matzo', 'flour tortilla': 'corn tortilla',
@@ -42,7 +44,7 @@ COLORS = ["red", "brown", "black", "blue", "green", "orange", "purple", "white",
 
 def get_methods():
     r = requests.get(str("http://www.enchantedlearning.com/wordlist/cooking.shtml"))
-    soup = BeautifulSoup(r.content, "lxml")
+    soup = BeautifulSoup(r.content)
     methods = []
     methods_div = soup.findAll("table")
 
@@ -58,7 +60,7 @@ def get_methods():
 
 def get_foods():
     r = requests.get("http://eatingatoz.com/food-list/")
-    soup = BeautifulSoup(r.content, "lxml")
+    soup = BeautifulSoup(r.content)
     foods = []
     for food in soup.find("div",{"class:","entry"}).findAll("li"):
         try:
@@ -66,12 +68,12 @@ def get_foods():
         except:
             continue        
         foods.append(mystring)
-    print foods
+ #COMMENT   print foods
     return foods
 
 def get_tools():
     r = requests.get(str("http://www.enchantedlearning.com/wordlist/cookingtools.shtml"))
-    soup = BeautifulSoup(r.content, "lxml")
+    soup = BeautifulSoup(r.content)
     tools = {}
     tools_div = soup.findAll("table")
 
@@ -139,7 +141,7 @@ def autograder(url):
     ingredients = soup.findAll("span", { "itemprop" : "ingredients" })
     number_reg = re.compile(r"[\d/]+[\d/ ]*")
     for ingredient_expression in ingredients:
-        print ingredient_expression.contents[0]
+    #COMMENT    print ingredient_expression.contents[0]
         ingredient_expression.contents[0] = remove_parentheses(ingredient_expression.contents[0]).replace(u"\u00E9", "e")
     	ingredient_dict = {}
         quantity = ""
@@ -192,14 +194,14 @@ def autograder(url):
                 ingredient_dict["preparation"] = descriptor.strip(" ")                
             for food in food_list:
                 if food in split_ingredient[1]:
-                    print food
+       #COMMENT             print food
                     no_split = True
                     break
         if no_split:
             ingredient = ingredient.replace(",", "")
         else:            
             ingredient = split_ingredient[0]
-        print ingredient
+  #COMMENT      print ingredient
         split_ingredient = ingredient.split(" ")
         if len(split_ingredient) > 1 and "and" not in ingredient:
             while "" in split_ingredient:
@@ -231,8 +233,11 @@ def autograder(url):
                 if d.strip(" ")[-2:] == "ly":
                     ingredient_dict["prep-description"] = d.strip(" ")
         for word in ingredient_expression.contents[0].split(" "):
-            if word[0].isupper() and word[0] not in ingredient_dict["descriptor"]:
-                ingredient_dict["descriptor"] = word.strip(" ")                
+            try:
+                if word[0].isupper() and word[0] not in ingredient_dict["descriptor"]:
+                    ingredient_dict["descriptor"] = word.strip(" ")
+            except Exception:
+                ingredient_dict["descriptor"] = ""
         for p in PREPARATION:
             if p in ingredient_expression.contents[0].lower():
                 ingredient_dict["preparation"] = p.strip(" ")
@@ -253,7 +258,7 @@ def autograder(url):
         if step.contents == []:
             method_html.remove(step)
             break
-        print str(step_number) + ". " + step.contents[0]
+   #COMMENT     print str(step_number) + ". " + step.contents[0]
         steps.append(step.contents[0])
         step_number = step_number + 1
         for prim_method in PRIMARY_COOKING_METHODS:
@@ -286,8 +291,7 @@ def autograder(url):
 
     return results
 
-def change_method(url):
-        results = autograder(url)
+def change_method(results):
         primary_method =  results["primary cooking method"]
         ingredient = results["ingredients"]
         primary_ingredient = None
@@ -577,35 +581,34 @@ def change_method(url):
             else:
                 print "Please select a number in the range presented."
         
-        print results   
+    #    print results   
 
-def to_gluten_free(url):
-    recipe = autograder(url)
+def to_gluten_free(recipe):
     ingredients = recipe["ingredients"]
     i = 0
     for ingredient in ingredients:
         if ingredient["name"] in GLUTEN_FREE:
             recipe["ingredients"][i]["name"] = GLUTEN_FREE[ingredient["name"]]
         i = i + 1
-    j = 0
     for ingredient in GLUTEN_FREE:
         for step in recipe["steps"]:
+            j = 0
             if ingredient in step:
                 recipe["steps"][j] = recipe["steps"][j].replace(ingredient,GLUTEN_FREE[ingredient])
             j = j + 1
     print recipe
     return recipe
 
-def to_lactose_free(url):
-    recipe = autograder(url)
+def to_lactose_free(recipe):
     ingredients = recipe["ingredients"]
     i = 0
     for ingredient in ingredients:
         if ingredient["name"] in LACTOSE_FREE:
             recipe["ingredients"][i]["name"] = LACTOSE_FREE[ingredient["name"]]
         i = i + 1
-    j = 0
+
     for ingredient in LACTOSE_FREE:
+        j = 0
         for step in recipe["steps"]:
             if ingredient in step:
                 recipe["steps"][j] = recipe["steps"][j].replace(ingredient,LACTOSE_FREE[ingredient])
@@ -613,16 +616,15 @@ def to_lactose_free(url):
     print recipe
     return recipe
 
-def to_gluten(url):
-    recipe = autograder(url)
+def to_gluten(recipe):
     ingredients = recipe["ingredients"]
     i = 0
     for ingredient in ingredients:
         if ingredient["name"] in GLUTEN:
             recipe["ingredients"][i]["name"] = GLUTEN[ingredient["name"]]
         i = i + 1
-    j = 0
     for ingredient in GLUTEN:
+        j = 0
         for step in recipe["steps"]:
             if ingredient in step:
                 recipe["steps"][j] = recipe["steps"][j].replace(ingredient,GLUTEN[ingredient])
@@ -630,16 +632,15 @@ def to_gluten(url):
     print recipe
     return recipe
 
-def to_lactose(url):
-    recipe = autograder(url)
+def to_lactose(recipe):
     ingredients = recipe["ingredients"]
     i = 0
     for ingredient in ingredients:
         if ingredient["name"] in LACTOSE_FREE:
             recipe["ingredients"][i]["name"] = LACTOSE_FREE[ingredient["name"]]
         i = i + 1
-    j = 0
     for ingredient in LACTOSE:
+        j = 0
         for step in recipe["steps"]:
             if ingredient in step:
                 recipe["steps"][j] = recipe["steps"][j].replace(ingredient,LACTOSE[ingredient])
@@ -647,18 +648,139 @@ def to_lactose(url):
     print recipe
     return recipe
 
-def main():
-	#pprint.pprint(autograder("http://allrecipes.com/Recipe/Easy-Garlic-Broiled-Chicken/"))
-    #pprint.pprint(autograder("http://allrecipes.com/Recipe/Baked-Lemon-Chicken-with-Mushroom-Sauce/"))
-    #pprint.pprint(autograder("http://allrecipes.com/Recipe/Meatball-Nirvana/"))
-    #pprint.pprint(autograder("http://allrecipes.com/recipe/easy-meatloaf/"))
-    #autograder("http://allrecipes.com/Recipe/Easy-Garlic-Broiled-Chicken/")
-    #get_foods()
-    #change_method("http://allrecipes.com/Recipe/Easy-Garlic-Broiled-Chicken/")
-    pprint.pprint(to_gluten_free("http://allrecipes.com/Recipe/Easy-Garlic-Broiled-Chicken/"))
-    pprint.pprint(to_lactose_free("http://allrecipes.com/Recipe/Easy-Garlic-Broiled-Chicken/"))
-    pprint.pprint(to_gluten("http://allrecipes.com/Recipe/Easy-Garlic-Broiled-Chicken/"))
-    pprint.pprint(to_lactose("http://allrecipes.com/Recipe/Easy-Garlic-Broiled-Chicken/"))
 
+def flush():
+    os.system('clear')
+    os.system('cls')
+    
+
+
+def display(recipe):
+    num = 0
+    flush()
+    print "Ingredients: "
+    print "-------------"
+    for ingredient in recipe['ingredients']:
+        if ingredient['name'] != 'none':
+            print ingredient['quantity'], ingredient['measurement'], ingredient['descriptor'], ingredient['name']
+    print "Steps: "
+    print "-------------"
+    for step in recipe['steps']:
+        num+=1
+        stepnum = str(num) + "."
+        print stepnum, step
+
+def start_interface():
+    def pr_help():
+        flush()
+        print "List of commands:"
+        print "lowsodium [mode] \t Transform to/from low-sodium"
+        print "lowfat [mode] \t Transform to/from lowfat"
+        print "glutenf [mode] \t Transform to/from gluten-free"
+        print "lactosef [mode] \t Transform to/from lactose-free"
+        print "method  \t Enter to the recipe cooking method"
+        print "dispay \t Displays the current recipe"
+        print "load [URL] \t Changes recipe to the selected URL"
+        print "help \t Display all available of commands"
+        print "exit \t Quits the program"
+    print "Welcome to ARP (AllRecipes Parser)!"
+    print "=========================================="
+    print "Begin by entering in a URL"
+    print "========================================="
+    s_input = raw_input()
+   # s_input = sys.stdin.readline()
+    print "Parsing recipe"
+    recipe = autograder(s_input);
+    flush()
+    display(recipe)
+    print "========================================="
+    print "Done! Please enter a transformation with"
+    print "[transformation] [mode] with to/for values for [mode]"
+    print "Example: lowsodium to /t transforms recipe to a low sodium version"
+    print "Enter help for a full list of transformations and commands"
+    
+    while True:
+        s_input = raw_input()
+        tokens = s_input.split()
+        if len(tokens) > 2:
+            print "Unknown command. Type help for commands list or exit to quit"
+        elif len(tokens) < 2:
+            if tokens[0] == "help":
+                pr_help()
+            elif tokens[0] == "method":
+                change_method(recipe);
+            elif tokens[0] == "display":
+                display(recipe);
+            elif tokens[0] == "exit":
+                return
+            else:
+                print "Unknown command. Type help for commands list or exit to quit"
+        else:
+            if tokens[0] == "lowsodium":
+                if tokens[1] == "to":
+                    flush()
+                    print "Transforming to low-sodium..."
+                    t_low_sodium(recipe, True)
+                    flush()
+                    display(recipe)
+                elif tokens[1] == "from":
+                    print "Transforming from low-sodium..."
+                    t_low_sodium(recipe, False)
+                    flush()
+                    display(recipe)
+                else:
+                    print "Please select to/for for [mode]"
+            elif tokens[0] == "lowfat":
+                if tokens[1] == "to":
+                    print "Transforming to lowfat..."
+                    t_low_fat(recipe, True)
+                    flush()
+                    display(recipe)
+                elif tokens[1] == "from":
+                    print "Transforming from lowfat..."
+                    t_low_fat(recipe, False)
+                    flush()
+                    display(recipe)
+                else:
+                    print "Please select to/for for [mode]"
+            elif tokens[0] == "lactosef":
+                if tokens[1] == "to":
+                    print "Transforming to lactose-free..."
+                    to_lactose_free(recipe)
+                    flush()
+                    display(recipe)
+                elif tokens[1] == "from":
+                    print "Transforming from lactose-free..."
+                    to_lactose(recipe)
+                    flush()
+                    display(recipe)
+                else:
+                    print "Please select to/for for [mode]"
+            elif tokens[0] == "glutenf":
+                if tokens[1] == "to":
+                    print "Transforming to gluten-free..."
+                    to_gluten(recipe)
+                    flush()
+                    display(recipe)
+                elif tokens[1] == "from":
+                    print "Transforming from gluten-free..."
+                    to_gluten_free(recipe)
+                    flush()
+                    display(recipe)
+                else:
+                    print "Please select to/for for [mode]"
+            elif tokens[0] == "load":
+                print "Loading recipe at URL"
+                recipe = autograder(tokens[1])
+                flush()
+                display(recipe)
+            else:
+                print "Unknown command. Type help for commands list or exit to quit"
+
+#tR= autograder("http://allrecipes.com/recipe/236391/cilantro-garlic-lime-sauteed-shrimp")
+def main():
+    start_interface();
+    return
+    
 if __name__ == "__main__":
     main()

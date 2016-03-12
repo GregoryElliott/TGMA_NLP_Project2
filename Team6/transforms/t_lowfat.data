@@ -1,22 +1,96 @@
 (dp0
-Vbutter
+Volive oil
 p1
-S'skim'
-p2
-sVminced garlic
-p3
 S'none'
+p2
+sVcheese
+p3
+S'lowfat'
 p4
-sVparsley
+sVginger
 p5
-g4
-sVsoy sauce
+S'lowfat'
 p6
-g4
-sVblack pepper
+sVhoney
 p7
-g2
-sVboneless chicken thighs
+g6
+sVjuice
 p8
-g4
+g2
+sVgreen pepper
+p9
+S'none'
+p10
+sVpowder
+p11
+g10
+sVyellow onion
+p12
+g2
+sVgreen onions
+p13
+S'none'
+p14
+sVcilantro
+p15
+g2
+sVwhite wine
+p16
+g2
+sVmacaroni
+p17
+g10
+sVSalsa
+p18
+g10
+sVwhite rice
+p19
+S'none'
+p20
+sVpepper
+p21
+g2
+sVoil
+p22
+g6
+sVBeans
+p23
+g10
+sVwater
+p24
+S'none'
+p25
+sVblack pepper
+p26
+g14
+sVgarlic
+p27
+g2
+sVwhite sugar
+p28
+g14
+sVsalsa
+p29
+g2
+sVonion
+p30
+g20
+sVsauce
+p31
+g14
+sVshrimp
+p32
+g2
+sVseeds
+p33
+g14
+sVflakes
+p34
+g14
+sVyellow mustard
+p35
+g20
+sVsteak
+p36
+g14
 s.
